@@ -1,4 +1,4 @@
-class Todo {
+export class Todo {
   id = crypto.randomUUID();
   completed = false;
   subtasks = [];
