@@ -1,0 +1,627 @@
+/* ============================= */
+/*            CSS RESET          */
+/* ============================= */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ============================= */
+/*            ROOT              */
+/* ============================= */
+
+:root {
+  /* ===== Color Palette ===== */
+
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-primary-active: #3b83f656;
+
+  --color-secondary: #eef4ff;
+  --color-secondary-hover: #e0ecff;
+
+  --color-bg: #f6f7f9;
+  --color-surface: #ffffff;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+
+  --color-border: #c9cbce;
+
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-success: #10b981;
+
+  --color-checkbox-border-priority-1: red;
+  --color-checkbox-background-priority-1: rgba(255, 0, 0, 0.25);
+  --color-checkbox-border-priority-2: orange;
+  --color-checkbox-background-priority-2: rgba(255, 166, 0, 0.25);
+  --color-checkbox-border-priority-3: blue;
+  --color-checkbox-background-priority-3: rgba(0, 0, 255, 0.25);
+  --color-checkbox-border-priority-4: var(--color-text-primary);
+  --color-checkbox-background-priority-4: transparent;
+
+  /* ===== Spacing Scale (8px system) ===== */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+
+  /* ===== Border Radius ===== */
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* ===== Elevation ===== */
+
+  --shadow-1: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-2: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  /* ===== Typography Scale ===== */
+
+  --font-family: "Poppins", sans-serif;
+
+  --fs-xxs: 0.625rem; /* 10px */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-md: 1rem; /* 16px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-xl: 1.75rem; /* 28px */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ===== Layout ===== */
+
+  --app-width: 1280px;
+  --app-height: 720px;
+  --header-height: 70px;
+  --sidebar-width: 200px;
+  --details-panel-width: 420px;
+
+  --text-area-min-height: 50px;
+  --text-area-max-height: 85px;
+}
+
+/* ============================= */
+/*          TYPOGRAPHY          */
+/* ============================= */
+
+h1 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+}
+
+h2 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+}
+
+p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ============================= */
+/*            BODY               */
+/* ============================= */
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-md);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+/* ============================= */
+/*           LAYOUT              */
+/* ============================= */
+
+.todo-app {
+  width: var(--app-width);
+  height: var(--app-height);
+
+  margin: var(--space-7) auto;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  box-shadow: var(--shadow-1);
+
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr 0px;
+  grid-template-rows: var(--header-height) 1fr;
+
+  transition: grid-template-columns 0.25s ease-in-out;
+}
+
+.todo-app.open {
+  grid-template-columns: var(--sidebar-width) 1fr var(--details-panel-width);
+}
+
+.header {
+  grid-row: 1;
+  grid-column: 1 / 4;
+}
+
+.sidebar {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.content {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.details-panel {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+/* ============================= */
+/*           COMPONENTS          */
+/* ============================= */
+
+.btn {
+  border: none;
+  background-color: transparent;
+  color: var(--color-primary);
+
+  font-weight: var(--fw-semibold);
+
+  padding: var(--space-1) var(--space-2);
+
+  cursor: pointer;
+}
+
+.btn > .icon {
+  fill: var(--color-primary);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  fill: var(--color-text-primary);
+}
+
+.sidebar-btn {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+  justify-content: start;
+  padding: var(--space-1) 0;
+  cursor: pointer;
+
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.sidebar-btn-active {
+  background-color: var(--color-primary-active);
+}
+
+/* ============================= */
+/*             HEADER            */
+/* ============================= */
+
+.header {
+  background-color: var(--color-primary-active);
+  border-bottom: 1px solid var(--color-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  padding-left: var(--space-3);
+}
+
+.title {
+  font-size: var(--fs-xl);
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 0.175rem;
+}
+
+.content-title {
+  width: 100%;
+  text-align: center;
+}
+
+/* ============================= */
+/*             SIDEBAR           */
+/* ============================= */
+
+.sidebar {
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  padding: var(--space-3) var(--space-2);
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sidebar-li {
+  text-align: start;
+}
+
+.projects-title {
+  color: var(--color-text-secondary);
+  padding: var(--space-1) var(--space-2);
+}
+
+.add-task-btn {
+  margin-bottom: var(--space-2);
+}
+
+/* ============================= */
+/*             CONTENT           */
+/* ============================= */
+
+.content {
+  background-color: var(--color-surface);
+}
+
+.tasks-container {
+  margin: var(--space-3) var(--space-7);
+}
+
+/* ============================= */
+/*        TASK-CARD              */
+/* ============================= */
+
+.task-card {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  grid-template-rows: repeat(2, auto);
+
+  border-bottom: 1px solid var(--color-border);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-1);
+
+  border-radius: var(--radius-sm);
+}
+
+.task-card:hover {
+  cursor: pointer;
+  background-color: var(--color-bg);
+}
+
+.task-checkbox {
+  grid-column: 1;
+  grid-row: 1;
+
+  justify-self: center;
+
+  margin-top: var(--space-1);
+}
+
+.task-content {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.task-features {
+  grid-column: 2;
+  grid-row: 2;
+
+  display: flex;
+  gap: var(--space-2);
+  justify-content: start;
+  flex: 1;
+}
+
+.task-title {
+  font-size: var(--fs-md);
+  color: var(--color-text-primary);
+}
+
+.task-checked {
+  text-decoration: line-through;
+}
+
+.task-description {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.task-feature {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+
+  display: flex;
+  align-items: center;
+}
+
+.task-feature-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--color-text-secondary);
+}
+
+/* ============================= */
+/*        TASK-CHECKBOX          */
+/* ============================= */
+
+.task-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 1.25rem;
+  height: 1.25rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-checkbox:checked::after {
+  content: "✓";
+  width: 1rem;
+  height: 1rem;
+  transform: translateX(0.125rem) translateY(-0.125rem);
+}
+
+.task-checkbox:checked {
+}
+
+/* ============== PRIORITY COLORING =============== */
+
+.checkbox-priority-1 {
+  border-color: var(--color-checkbox-border-priority-1);
+  background-color: var(--color-checkbox-background-priority-1);
+  color: var(--color-checkbox-border-priority-1);
+}
+
+.checkbox-priority-2 {
+  border-color: var(--color-checkbox-border-priority-2);
+  background-color: var(--color-checkbox-background-priority-2);
+  color: var(--color-checkbox-border-priority-2);
+}
+
+.checkbox-priority-3 {
+  border-color: var(--color-checkbox-border-priority-3);
+  background-color: var(--color-checkbox-background-priority-3);
+  color: var(--color-checkbox-border-priority-3);
+}
+
+.checkbox-priority-4 {
+  border-color: var(--color-checkbox-border-priority-4);
+  background-color: var(--color-checkbox-background-priority-4);
+  color: var(--color-checkbox-border-priority-4);
+}
+
+/* ============================= */
+/*        DETAILS-PANEL          */
+/* ============================= */
+
+.details-panel {
+  transform: translateX(100%);
+  transition: transform 0.25s ease-in-out;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  padding: var(--space-2) var(--space-3);
+
+  background-color: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+}
+
+.details-panel.open {
+  transform: translateX(0);
+}
+
+.dp-task-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dp-task-title-container {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.dp-task-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+}
+
+.dp-task-description {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  background: transparent;
+  margin: var(--space-1);
+
+  resize: none;
+  min-height: var(--text-area-min-height);
+  max-height: var(--text-area-max-height);
+  overflow-y: auto;
+
+  font-size: var(--fs-sm);
+}
+
+.dp-task-description:focus {
+  outline: none;
+  border: 1px solid var(--color-text-primary);
+}
+
+.dp-task-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dp-task-feature {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+
+  padding: var(--space-2) 0;
+
+  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  cursor: pointer;
+}
+
+.dp-task-feature:hover {
+  background-color: var(--color-bg);
+}
+
+.dp-task-feature-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: var(--color-text-secondary);
+}
+
+.dp-task-subtasks {
+}
+
+.dp-task-subtasks-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.dp-task-subtasks-list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-1) var(--space-3);
+}
+
+.dp-task-subtasks-list-item {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dp-task-subtasks-list-item-content {
+}
+
+.dp-task-subtasks-list-item-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 1rem;
+  height: 1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  display: grid;
+  place-content: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dp-task-subtasks-list-item-checkbox:checked::after {
+  content: "✓";
+  width: 1rem;
+  height: 1rem;
+  transform: translateX(0.125rem) translateY(-0.125rem);
+}

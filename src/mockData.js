@@ -1,0 +1,84 @@
+export const mockProjects = [
+  {
+    id: "p1",
+    name: "Inbox",
+    todos: [
+      {
+        id: "t1",
+        title: "Buy groceries",
+        description: "Milk, eggs, bread, chicken",
+        dueDate: "2026-03-20",
+        priority: "medium",
+        completed: false,
+        subtasks: [
+          { title: "Check fridge first", completed: true },
+          { title: "Buy eggs", completed: false },
+        ],
+      },
+      {
+        id: "t2",
+        title: "Workout",
+        description: "Push workout at the gym",
+        dueDate: "2026-03-17",
+        priority: "high",
+        completed: false,
+        subtasks: [],
+      },
+    ],
+  },
+  {
+    id: "p2",
+    name: "Work",
+    todos: [
+      {
+        id: "t3",
+        title: "Finish Todo App",
+        description: "Complete Odin Project assignment",
+        dueDate: "2026-03-22",
+        priority: "high",
+        completed: false,
+        subtasks: [
+          { title: "Project manager", completed: true },
+          { title: "Todo manager", completed: true },
+          { title: "UI rendering", completed: false },
+        ],
+      },
+      {
+        id: "t4",
+        title: "Review PR",
+        description: "Check teammate pull request",
+        dueDate: "2026-03-18",
+        priority: "low",
+        completed: false,
+        subtasks: [],
+      },
+    ],
+  },
+  {
+    id: "p3",
+    name: "Personal",
+    todos: [
+      {
+        id: "t5",
+        title: "Read book",
+        description: "Continue reading current book",
+        dueDate: "2026-03-25",
+        priority: "low",
+        completed: false,
+        subtasks: [],
+      },
+      {
+        id: "t6",
+        title: "Plan hike",
+        description: "Look for trails and weather",
+        dueDate: "2026-03-30",
+        priority: "medium",
+        completed: false,
+        subtasks: [
+          { title: "Check maps", completed: false },
+          { title: "Prepare gear list", completed: false },
+        ],
+      },
+    ],
+  },
+];
