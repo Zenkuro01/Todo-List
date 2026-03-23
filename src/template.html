@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <main class="todo-app open">
+    <main class="todo-app">
       <div class="header">
         <h1 class="title">Todothis!</h1>
         <h2 class="content-title">Inbox</h2>
@@ -82,215 +82,30 @@
         <div class="projects">
           <div class="projects-title">Projects</div>
 
-          <ul class="sidebar-list">
-            <li class="sidebar-li">
-              <a class="sidebar-a sidebar-btn">
-                <svg
-                  class="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>notebook-multiple</title>
-                  <path
-                    d="M9.05,9H7.06V6H9.05V4.03H7.06V3.03C7.06,1.92 7.95,1.04 9.05,1.04H15.03V8L17.5,6.5L20,8V1.04H21C22.05,1.04 23,2 23,3.03V17C23,18.03 22.05,19 21,19H9.05C8,19 7.06,18.05 7.06,17V16H9.05V14H7.06V11H9.05V9M1,18H3V15H1V13H3V10H1V8H3V5H5V8H3V10H5V13H3V15H5V18H3V20H5V21H21V23H5A2,2 0 0,1 3,21V20H1V18Z"
-                  />
-                </svg>
-                Test project 1</a
-              >
-            </li>
-            <li class="sidebar-li">
-              <a class="sidebar-a sidebar-btn">
-                <svg
-                  class="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>notebook-multiple</title>
-                  <path
-                    d="M9.05,9H7.06V6H9.05V4.03H7.06V3.03C7.06,1.92 7.95,1.04 9.05,1.04H15.03V8L17.5,6.5L20,8V1.04H21C22.05,1.04 23,2 23,3.03V17C23,18.03 22.05,19 21,19H9.05C8,19 7.06,18.05 7.06,17V16H9.05V14H7.06V11H9.05V9M1,18H3V15H1V13H3V10H1V8H3V5H5V8H3V10H5V13H3V15H5V18H3V20H5V21H21V23H5A2,2 0 0,1 3,21V20H1V18Z"
-                  />
-                </svg>
-                Test project 2</a
-              >
-            </li>
-            <li class="sidebar-li">
-              <a class="sidebar-a sidebar-btn">
-                <svg
-                  class="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>notebook-multiple</title>
-                  <path
-                    d="M9.05,9H7.06V6H9.05V4.03H7.06V3.03C7.06,1.92 7.95,1.04 9.05,1.04H15.03V8L17.5,6.5L20,8V1.04H21C22.05,1.04 23,2 23,3.03V17C23,18.03 22.05,19 21,19H9.05C8,19 7.06,18.05 7.06,17V16H9.05V14H7.06V11H9.05V9M1,18H3V15H1V13H3V10H1V8H3V5H5V8H3V10H5V13H3V15H5V18H3V20H5V21H21V23H5A2,2 0 0,1 3,21V20H1V18Z"
-                  />
-                </svg>
-                Test project 3</a
-              >
-            </li>
-          </ul>
+          <ul class="sidebar-list"></ul>
         </div>
       </div>
 
       <div class="content">
-        <div class="tasks-container">
-          <div class="task-card">
-            <input
-              class="task-checkbox checkbox-priority-1"
-              type="checkbox"
-              data-id="t1"
-              checked
-            />
-
-            <div class="task-content">
-              <div class="task-title task-checked">Title 1</div>
-              <div class="task-description">This is a high priority task!</div>
-            </div>
-            <div class="task-features">
-              <div class="task-feature task-subtasks">
-                <svg
-                  class="task-feature-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>file-tree</title>
-                  <path
-                    d="M3,3H9V7H3V3M15,10H21V14H15V10M15,17H21V21H15V17M13,13H7V18H13V20H7L5,20V9H7V11H13V13Z"
-                  /></svg
-                >0/1
-              </div>
-              <div class="task-feature task-due-date">
-                <svg
-                  class="task-feature-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>calendar-range</title>
-                  <path
-                    d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"
-                  />
-                </svg>
-
-                <span>28 Mar</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="task-card">
-            <input
-              class="task-checkbox checkbox-priority-2"
-              type="checkbox"
-              data-id="t1"
-            />
-
-            <div class="task-content">
-              <div class="task-title">Title 2</div>
-              <div class="task-description">I should do this next.</div>
-            </div>
-            <div class="task-features">
-              <div class="task-feature task-subtasks">
-                <svg
-                  class="task-feature-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>file-tree</title>
-                  <path
-                    d="M3,3H9V7H3V3M15,10H21V14H15V10M15,17H21V21H15V17M13,13H7V18H13V20H7L5,20V9H7V11H13V13Z"
-                  /></svg
-                >0/3
-              </div>
-              <div class="task-feature task-due-date">
-                <svg
-                  class="task-feature-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>calendar-range</title>
-                  <path
-                    d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"
-                  /></svg
-                >Tomorrow
-              </div>
-            </div>
-          </div>
-
-          <div class="task-card">
-            <input
-              class="task-checkbox checkbox-priority-3"
-              type="checkbox"
-              data-id="t1"
-              checked
-            />
-
-            <div class="task-content">
-              <div class="task-title task-checked">Title 3</div>
-              <div class="task-description">Do this if you have time.</div>
-            </div>
-            <div class="task-features">
-              <div class="task-feature task-due-date">
-                <svg
-                  class="task-feature-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>calendar-range</title>
-                  <path
-                    d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"
-                  /></svg
-                >Today
-              </div>
-            </div>
-          </div>
-
-          <div class="task-card">
-            <input
-              class="task-checkbox checkbox-priority-4"
-              type="checkbox"
-              data-id="t1"
-            />
-
-            <div class="task-content">
-              <div class="task-title">Title 4</div>
-              <div class="task-description">Chores</div>
-            </div>
-            <div class="task-features">
-              <div class="task-feature task-subtasks">
-                <svg
-                  class="task-feature-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <title>file-tree</title>
-                  <path
-                    d="M3,3H9V7H3V3M15,10H21V14H15V10M15,17H21V21H15V17M13,13H7V18H13V20H7L5,20V9H7V11H13V13Z"
-                  /></svg
-                >2/10
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="tasks-container"></div>
       </div>
 
-      <div class="details-panel open">
+      <div class="details-panel">
         <div class="dp-task-content">
           <div class="dp-task-title-container">
-            <input
-              class="task-checkbox checkbox-priority-1"
-              type="checkbox"
-              data-id="t1"
-              checked
-            />
+            <input class="task-checkbox" type="checkbox" />
 
-            <div class="dp-task-title task-checked">Title 1</div>
+            <span class="dp-task-title task-checked"></span>
           </div>
 
-          <textarea class="dp-task-description" placeholder="Description...">
-This is a high priority task!</textarea
-          >
+          <textarea
+            class="dp-task-description"
+            placeholder="Description..."
+          ></textarea>
         </div>
+
         <div class="dp-task-features">
-          <div class="dp-task-feature dp-task-project">
+          <div class="dp-task-feature dp-task-project-container">
             <svg
               class="dp-task-feature-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -301,10 +116,11 @@ This is a high priority task!</textarea
                 d="M19,15H15A3,3 0 0,1 12,18A3,3 0 0,1 9,15H5V5H19M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"
               />
             </svg>
-            Inbox
+
+            <span class="dp-task-project"></span>
           </div>
 
-          <div class="dp-task-feature dp-task-due-date">
+          <div class="dp-task-feature dp-task-due-date-container">
             <svg
               class="dp-task-feature-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -315,10 +131,10 @@ This is a high priority task!</textarea
                 d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"
               />
             </svg>
-            28 Mar
+            <span class="dp-task-due-date"></span>
           </div>
 
-          <div class="dp-task-feature dp-task-priority">
+          <div class="dp-task-feature dp-task-priority-container">
             <svg
               class="dp-task-feature-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +146,7 @@ This is a high priority task!</textarea
               />
             </svg>
 
-            Priority 1
+            <span class="dp-task-priority"></span>
           </div>
         </div>
 
@@ -349,36 +165,7 @@ This is a high priority task!</textarea
             <span>Sub-tasks</span>
           </div>
 
-          <ul class="dp-task-subtasks-list">
-            <li class="dp-task-subtasks-list-item">
-              <input
-                class="dp-task-subtasks-list-item-checkbox"
-                type="checkbox"
-                checked
-              />
-              <span class="dp-task-subtasks-list-item-content"
-                >Test subtask1</span
-              >
-            </li>
-            <li class="dp-task-subtasks-list-item">
-              <input
-                class="dp-task-subtasks-list-item-checkbox"
-                type="checkbox"
-              />
-              <span class="dp-task-subtasks-list-item-content"
-                >Test subtask2</span
-              >
-            </li>
-            <li class="dp-task-subtasks-list-item">
-              <input
-                class="dp-task-subtasks-list-item-checkbox"
-                type="checkbox"
-              />
-              <span class="dp-task-subtasks-list-item-content"
-                >Test subtask3</span
-              >
-            </li>
-          </ul>
+          <ul class="dp-task-subtasks-list"></ul>
         </div>
       </div>
     </main>
