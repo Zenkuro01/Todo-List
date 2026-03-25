@@ -64,6 +64,10 @@ function getCurrentProject() {
   return getProjectById(appState.currentProjectId);
 }
 
+function getAllProjects() {
+  return appState.projects;
+}
+
 export {
   createProject,
   getProjectById,
@@ -71,4 +75,5 @@ export {
   deleteProjectById,
   setCurrentProjectById,
   getCurrentProject,
+  getAllProjects,
 };

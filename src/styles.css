@@ -260,13 +260,16 @@ body {
 }
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
 
   fill: var(--color-text-primary);
 }
 
 .sidebar-btn {
+  background-color: transparent;
+  border: none;
+
   display: flex;
   gap: var(--space-1);
   align-items: center;
@@ -344,6 +347,11 @@ body {
 
 .add-task-btn {
   margin-bottom: var(--space-2);
+}
+
+.add-task-btn .icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 /* ============================= */
