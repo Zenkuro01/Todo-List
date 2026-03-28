@@ -3,6 +3,7 @@ import * as projectManager from "./logic/projectManager.js";
 import * as todoManager from "./logic/todoManager.js";
 import { appState } from "./state/AppState.js";
 import { renderSidebar } from "./ui/renderSidebar.js";
+import { renderTasks } from "./ui/renderTasks.js";
 
 function initApp() {
   if (appState.projects.length === 0) projectManager.createProject("Inbox");
@@ -20,6 +21,7 @@ appState.currentProjectId = mockProjects[0].id;
 console.log("Add mock projects", appState);
 
 renderSidebar();
+renderTasks();
 
 // console.log("Create project...");
 // projectManager.createProject("Inbox1");
