@@ -68,6 +68,14 @@ function getAllProjects() {
   return appState.projects;
 }
 
+function getTaskById(id) {
+  const currentProject = getCurrentProject();
+
+  const task = currentProject.todos.find((task) => task.id === id);
+
+  return task || null;
+}
+
 export {
   createProject,
   getProjectById,
@@ -76,4 +84,5 @@ export {
   setCurrentProjectById,
   getCurrentProject,
   getAllProjects,
+  getTaskById,
 };
