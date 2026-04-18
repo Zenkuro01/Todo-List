@@ -1,4 +1,5 @@
 import * as projectManager from "../logic/projectManager.js";
+import { appState } from "../state/AppState.js";
 
 // SVGs
 const projectSvg = `
@@ -54,12 +55,12 @@ const closeSvg = `
     </svg>
   `;
 
-export const renderDetailsPanel = (currentTaskID) => {
+export const renderDetailsPanel = () => {
   // DOM
   const detailsPanelContainer = document.querySelector(".details-panel");
 
   // read state
-  const task = projectManager.getTaskById(currentTaskID);
+  const task = projectManager.getTaskById(appState.selectedTaskId);
 
   if (task === null) {
     console.error("Task not found!");
