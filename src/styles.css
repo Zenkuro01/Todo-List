@@ -499,6 +499,8 @@ body {
 /* ============================= */
 
 .details-panel {
+  position: relative;
+
   transform: translateX(100%);
   transition: transform 0.25s ease-in-out;
   overflow: hidden;
@@ -515,6 +517,14 @@ body {
 
 .details-panel.open {
   transform: translateX(0);
+}
+
+.dp-close-btn {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+
+  cursor: pointer;
 }
 
 .dp-task-content {

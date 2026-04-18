@@ -23,41 +23,35 @@ console.log("Add mock projects", appState);
 
 renderSidebar();
 renderTasks();
-renderDetailsPanel("t4");
 
-// console.log("Create project...");
-// projectManager.createProject("Inbox1");
-// console.log(appState);
+const tasksContainer = document.querySelector(".tasks-container");
 
-// console.log("Delete project...");
-// projectManager.deleteProjectById(projectManager.getProjectByName("Inbox1").id);
-// console.log(appState);
+tasksContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("task-checkbox")) {
+    return;
+  }
 
-// console.log("Create todo...");
-// todoManager.createTodo("task", "description", "today", "1");
-// console.log(appState.projects[0].todos);
+  const taskCard = event.target.closest(".task-card");
+  renderDetailsPanel(taskCard.dataset.id);
 
-// console.log("Toggle todo...");
-// todoManager.toggleTodoById(appState.projects[0].todos[0].id);
-// console.log(appState.projects[0].todos);
+  document.querySelector(".todo-app").classList.add("open");
+  document.querySelector(".details-panel").classList.add("open");
+});
 
-// console.log("Delete todo...");
-// todoManager.deleteTodoById(appState.projects[0].todos[0].id);
-// console.log(appState.projects[0].todos);
+const detailsPanel = document.querySelector(".details-panel");
 
-const extendBtn = document.querySelector("#test-extend-btn");
-
-extendBtn.addEventListener("click", () => {
-  const todoApp = document.querySelector(".todo-app");
-  const detailsPanel = document.querySelector(".details-panel");
-
-  todoApp.classList.toggle("open");
-  detailsPanel.classList.toggle("open");
+detailsPanel.addEventListener("click", (event) => {
+  if (event.target.closest(".dp-close-btn")) {
+    document.querySelector(".todo-app").classList.remove("open");
+    detailsPanel.classList.remove("open");
+  }
 });
 
 const dpTaskTextArea = document.querySelector(".dp-task-description");
 
-dpTaskTextArea.addEventListener("input", () => {
-  dpTaskTextArea.style.height = "auto";
-  dpTaskTextArea.style.height = dpTaskTextArea.scrollHeight + "px";
-});
+if (dpTaskTextArea) {
+  dpTaskTextArea.addEventListener("input", () => {
+    dpTaskTextArea.style.height = "auto";
+    dpTaskTextArea.style.height = dpTaskTextArea.scrollHeight + "px";
+  });
+}
