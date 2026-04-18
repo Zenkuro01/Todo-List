@@ -1,8 +1,7 @@
 import * as projectManager from "../logic/projectManager.js";
 
-export const renderDetailsPanel = (currentTaskID) => {
-  // SVGs
-  const projectSvg = `
+// SVGs
+const projectSvg = `
     <svg
       class="dp-task-feature-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +12,7 @@ export const renderDetailsPanel = (currentTaskID) => {
     </svg>
   `;
 
-  const dueDateSvg = `
+const dueDateSvg = `
     <svg
       class="dp-task-feature-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +23,7 @@ export const renderDetailsPanel = (currentTaskID) => {
     </svg>
   `;
 
-  const prioritySvg = `
+const prioritySvg = `
     <svg
       class="dp-task-feature-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +34,7 @@ export const renderDetailsPanel = (currentTaskID) => {
     </svg>
   `;
 
-  const subtaskHeaderSvg = `
+const subtaskHeaderSvg = `
     <svg
       class="dp-task-feature-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +45,7 @@ export const renderDetailsPanel = (currentTaskID) => {
     </svg>
   `;
 
+export const renderDetailsPanel = (currentTaskID) => {
   // DOM
   const detailsPanelContainer = document.querySelector(".details-panel");
 

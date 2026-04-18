@@ -17,19 +17,11 @@ function createProject(name) {
 }
 
 function getProjectById(id) {
-  const project = appState.projects.find((project) => project.id === id);
-
-  if (!project) return null;
-
-  return project;
+  return appState.projects.find((project) => project.id === id) || null;
 }
 
 function getProjectByName(name) {
-  const project = appState.projects.find((project) => project.name === name);
-
-  if (!project) return null;
-
-  return project;
+  return appState.projects.find((project) => project.name === name) || null;
 }
 
 function deleteProjectById(id) {
