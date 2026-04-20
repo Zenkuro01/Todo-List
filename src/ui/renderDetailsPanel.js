@@ -1,4 +1,5 @@
 import * as projectManager from "../logic/projectManager.js";
+import * as taskManager from "../logic/taskManager.js";
 import { appState } from "../state/AppState.js";
 
 // SVGs
@@ -102,11 +103,10 @@ export const renderDetailsPanel = () => {
       break;
   }
 
-  const title = document.createElement("div");
+  const title = document.createElement("input");
+  title.type = "text";
   title.classList.add("dp-task-title");
-  title.textContent = task.title;
-
-  if (task.completed) title.classList.add("task-checked");
+  title.value = task.title;
 
   titleContainer.append(checkbox, title);
 
@@ -125,10 +125,25 @@ export const renderDetailsPanel = () => {
   projectFeature.classList.add("dp-task-feature");
   projectFeature.innerHTML = projectSvg;
 
-  const projectText = document.createElement("span");
-  projectText.textContent = projectManager.getCurrentProject().name;
+  const projectSelect = document.createElement("select");
+  projectSelect.classList.add("dp-task-project-select");
 
-  projectFeature.append(projectText);
+  const projects = projectManager.getAllProjects();
+  const taskProject = taskManager.getTaskProject(task.id);
+
+  for (const project of projects) {
+    const option = document.createElement("option");
+    option.value = project.id;
+    option.textContent = project.name;
+
+    if (taskProject && project.id === taskProject.id) {
+      option.selected = true;
+    }
+
+    projectSelect.append(option);
+  }
+
+  projectFeature.append(projectSelect);
 
   const dueDateFeature = document.createElement("div");
   dueDateFeature.classList.add("dp-task-feature");

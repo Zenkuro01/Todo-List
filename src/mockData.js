@@ -49,7 +49,7 @@ export const mockProjects = [
     name: "Work",
     todos: [
       {
-        id: "t3",
+        id: "t5",
         title: "Finish Todo App",
         description: "Complete Odin Project assignment",
         dueDate: "2026-03-22",
@@ -62,7 +62,7 @@ export const mockProjects = [
         ],
       },
       {
-        id: "t4",
+        id: "t6",
         title: "Review PR",
         description: "Check teammate pull request",
         dueDate: "2026-03-18",
@@ -77,7 +77,7 @@ export const mockProjects = [
     name: "Personal",
     todos: [
       {
-        id: "t5",
+        id: "t7",
         title: "Read book",
         description: "Continue reading current book",
         dueDate: "2026-03-25",
@@ -86,7 +86,7 @@ export const mockProjects = [
         subtasks: [],
       },
       {
-        id: "t6",
+        id: "t8",
         title: "Plan hike",
         description: "Look for trails and weather",
         dueDate: "2026-03-30",

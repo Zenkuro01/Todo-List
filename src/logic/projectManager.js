@@ -61,11 +61,12 @@ function getAllProjects() {
 }
 
 function getTaskById(id) {
-  const currentProject = getCurrentProject();
+  for (const project of appState.projects) {
+    const task = project.todos.find((t) => t.id === id);
+    if (task) return task;
+  }
 
-  const task = currentProject.todos.find((task) => task.id === id);
-
-  return task || null;
+  return null;
 }
 
 export {

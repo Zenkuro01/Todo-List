@@ -541,6 +541,10 @@ body {
 .dp-task-title {
   font-size: var(--fs-lg);
   font-weight: var(--fw-semibold);
+
+  outline: none;
+  border: none;
+  background-color: transparent;
 }
 
 .dp-task-description {
