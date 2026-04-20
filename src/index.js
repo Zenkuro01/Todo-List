@@ -7,6 +7,7 @@ import { renderTasks } from "./ui/renderTasks.js";
 import { renderDetailsPanel } from "./ui/renderDetailsPanel.js";
 import { initTasksEvents } from "./events/tasksEvents.js";
 import { initDetailsPanelEvents } from "./events/detailsPanelEvents.js";
+import { initSidebarEvents } from "./events/sidebarEvents.js";
 
 function initApp() {
   if (appState.projects.length === 0) projectManager.createProject("Inbox");
@@ -28,3 +29,4 @@ renderTasks();
 
 initTasksEvents();
 initDetailsPanelEvents();
+initSidebarEvents();

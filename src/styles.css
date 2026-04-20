@@ -270,6 +270,8 @@ body {
   background-color: transparent;
   border: none;
 
+  width: 100%;
+
   display: flex;
   gap: var(--space-1);
   align-items: center;

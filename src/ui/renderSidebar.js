@@ -16,6 +16,7 @@ export const renderSidebar = () => {
 
   // read state
   const projects = projectManager.getAllProjects();
+  const currentProject = projectManager.getCurrentProject();
 
   // clear container
   while (projectsList.firstElementChild) {
@@ -29,6 +30,11 @@ export const renderSidebar = () => {
 
     const sidebarAnchor = document.createElement("button");
     sidebarAnchor.classList.add("sidebar-btn");
+    sidebarAnchor.dataset.id = project.id;
+
+    if (currentProject && project.id === currentProject.id) {
+      sidebarAnchor.classList.add("sidebar-btn-active");
+    }
 
     // project icon svg injection
     sidebarAnchor.innerHTML = projectSvgMarkup;
